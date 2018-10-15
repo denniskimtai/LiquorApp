@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "85021084218",
+    "firebase_url": "https://liquor-97cc2.firebaseio.com",
+    "project_id": "liquor-97cc2",
+    "storage_bucket": "liquor-97cc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85021084218:android:31189127f62928d5",
+        "android_client_info": {
+          "package_name": "com.example.shylla.liquor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85021084218-2cbmgr5m6u3idjq6agf3e4r02inqo4ni.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shylla.liquor",
+            "certificate_hash": "98393754f42feb33218eb22912f9b26fba3a4888"
+          }
+        },
+        {
+          "client_id": "85021084218-62v1hrtijq59c9ikio7n68s2cpql0uso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbgZEuL__yFPnvk3sh4rsTM32-Ui2ikiA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85021084218-62v1hrtijq59c9ikio7n68s2cpql0uso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
