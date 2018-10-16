@@ -1,12 +1,14 @@
 package com.example.shylla.liquor;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,10 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (auth.getCurrentUser() != null){
             //Intent to start homepage
-            Toast.makeText(this, "Welcome back", Toast.LENGTH_SHORT).show();
-           Intent intent = new Intent(MainActivity.this, SignUp.class);
-           startActivity(intent);
-            //finish();
+            Intent intent = new Intent(MainActivity.this , CategoriesActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         setContentView(R.layout.activity_main);
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SignUp.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -70,14 +72,14 @@ public class MainActivity extends AppCompatActivity {
                 String email = loginEmail.getText().toString().trim();
                 final String password = loginPassword.getText().toString().trim();
 
-                progressBar.setVisibility(View.VISIBLE);
+                //progressBar.setVisibility(View.VISIBLE);
 
                 //Authenticate user
                 auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
+                               // progressBar.setVisibility(View.GONE);
 
                                 //Check for success of operation
                                 //If successful move to homepage else toast a message
@@ -86,8 +88,9 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, "Login failed! Please check your internet connection.", Toast.LENGTH_SHORT).show();
                                 } else{
                                     //Intent to proceed to homepage
-                                    Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                                    //finish();
+                                    Intent intent = new Intent(MainActivity.this , CategoriesActivity.class);
+                                    startActivity(intent);
+                                    finish();
                                 }
                             }
                         });
@@ -95,7 +98,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+    //Gradient animation
+        RelativeLayout relativeLayout = findViewById(R.id.loginScreen);
+        AnimationDrawable animationDrawable =  (AnimationDrawable) relativeLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(2000);
+        animationDrawable.start();
 
 
     }

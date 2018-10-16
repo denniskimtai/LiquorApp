@@ -4,4 +4,12 @@
     <string name="hi">
         <font fgcolor="#444444">Haven’t registered yet?  </font><font fgcolor="#000000">Join now</font>
     </string>
+    <string name="title_activity_categories">CategoriesActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Kinywaji</string>
+    <string name="nav_header_subtitle">For all your drink needs</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
 </resources>

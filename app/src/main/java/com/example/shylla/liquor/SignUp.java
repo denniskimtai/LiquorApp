@@ -1,6 +1,7 @@
 package com.example.shylla.liquor;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +45,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SignUp.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -91,7 +94,7 @@ public class SignUp extends AppCompatActivity {
                                     Toast.makeText(SignUp.this, "Sign up failed! Please try again.", Toast.LENGTH_SHORT).show();
                                 }else {
                                     //Intent to homepage
-                                    Intent intent = new Intent(SignUp.this, MainActivity.class);
+                                    Intent intent = new Intent(SignUp.this , CategoriesActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }
@@ -100,6 +103,13 @@ public class SignUp extends AppCompatActivity {
             }
 
         });
+
+        //Gradient animation
+        RelativeLayout relativeLayout = findViewById(R.id.signupScreen);
+        AnimationDrawable animationDrawable =  (AnimationDrawable) relativeLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2000);
+        animationDrawable.setExitFadeDuration(2000);
+        animationDrawable.start();
     }
 
     @Override
